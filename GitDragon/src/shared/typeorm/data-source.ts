@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
 import path from "path";
+import Dragon from "@modules/dragons/typeorm/entities/Dragon";
 
 export const AppDataSource = new DataSource({
  type: "postgres",
@@ -11,7 +12,7 @@ export const AppDataSource = new DataSource({
  database: "dragonapi",
  synchronize: true, // sempre false em produção/migrations
  logging: false,
- entities: [],
+ entities: [Dragon],
  migrations: [path.join("src", "shared", "typeorm", "migrations", "*.ts")],
  subscribers: [],
 });
