@@ -6,7 +6,7 @@ import Dragon from "@modules/dragons/typeorm/entities/Dragon";
 export const AppDataSource = new DataSource({
  type: "postgres",
  host: "localhost", // se Node está fora do Docker
- port: 5433,
+ port: 5432,
  username: "postgres",
  password: "docker",
  database: "dragonapi",

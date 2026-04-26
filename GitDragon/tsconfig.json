@@ -6,7 +6,6 @@
     //"outDir": "dist",
     "baseUrl": "./",
     "paths": {
-      "@config/*": ["src/config/*"],
       "@modules/*": ["src/modules/*"],
       "@shared/*": ["src/shared/*"]
     },

@@ -9,7 +9,7 @@ vida: number;
 poder: number; 
 } 
 export default class CreateDragonService { 
-public async execute({ name, elemento, nivel, vida, poder }: IRequest): 
+public async execute({ name, nivel, elemento, vida, poder }: IRequest): 
 Promise<Dragon> { 
 const dragonsRepository = AppDataSource.getRepository(Dragon); 
 const dragonsExists = await dragonsRepository.findOne({ 
@@ -20,8 +20,8 @@ throw new AppError("There is already one dragon with this name.");
 } 
 const dragon = dragonsRepository.create({ 
 name,
-elemento,
-nivel, 
+nivel,
+elemento, 
 vida,
 poder,
 }); 
