@@ -1,0 +1,21 @@
+import { NextFunction, Request, Response } from 'express';
+import CreateSessionService from '../services/CreateSessionService';
+
+export default class SessionController {
+  public async create(request: Request, response: Response, next: NextFunction): Promise<Response | void> {
+    try {
+      const { email, password } = request.body;
+
+      const createSession = new CreateSessionService();
+
+      const session = await createSession.execute({
+        email,
+        password,
+      });
+
+      return response.json(session);
+    } catch (err) {
+      next(err);
+    }
+  }
+}
